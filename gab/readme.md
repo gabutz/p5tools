@@ -2,7 +2,7 @@
 
 This is a dockerized app for listing and approving GAB requests
 
-# Instal and run
+# Install and run
 
 Clone the repo by running the following command:
 ```
