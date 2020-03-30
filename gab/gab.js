@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const yargs = require('yargs');
-
-const C = require('./constants');
 const logger = require('./logger');
 
+const USERNAME = process.env.GAB_USERNAME;
+const PASSWORD = process.env.GAB_PASSWORD
 const USERNAME_SELECTOR = '#loginForm\\:username';
 const PASSWORD_SELECTOR = '#loginForm\\:password';
 const LOGIN_CTA_SELECTOR = '#loginForm\\:submit';
@@ -76,9 +76,9 @@ async function login(page) {
 
   // Input username and password
   await page.click(USERNAME_SELECTOR);
-  await page.keyboard.type(C.username);
+  await page.keyboard.type(USERNAME);
   await page.click(PASSWORD_SELECTOR);
-  await page.keyboard.type(C.password);
+  await page.keyboard.type(PASSWORD);
 
   // Attempt login and wait for page load
   await Promise.all([
