@@ -1,44 +1,39 @@
 # GAB
 
-This is a dockerized app for listing and approving GAB requests
+This is app allows you to see and approve pending GAB requests
 
-# Install and run
-
-Clone the repo by running the following command:
-```
-git clone gabutz/p5tools/gab
-```
-
-Once cloned, go the the `gab` folder and build the app:
-```
-docker build -t gab .
-```
-
-Run the app with the following command:
-```
-docker run gab "[action options]"
-```
+# Info
 
 In order see the list of available actions and options run the following command:
 ```
-docker run gab "-h"
+docker-compose run gab "-h"
 ```
 
 # Examples
 
 Here are some examples:
 
-## Get info about all pending requests
+## Get the number of pending requests
 ```
-docker run gab "info"
+docker-compose run gab "info"
 ```
 
-## Get info about all pending paid vacation requests
+## Get a list of pending requests
 ```
-docker run gab "info -t paid"
+docker-compose run gab "info -v"
+```
+
+## Get info about all pending remote work requests
+```
+docker-compose run gab "info -t wfh -v"
 ```
 
 ## Approve first 5 remote work requests
 ```
-docker run gab "approve -t wfh -l 5"
+docker-compose run gab "approve -t wfh -l 5"
+```
+
+## Approve all remote work requests
+```
+docker-compose run gab "approve -t wfh"
 ```

@@ -2,8 +2,8 @@ const puppeteer = require('puppeteer');
 const yargs = require('yargs');
 const logger = require('./logger');
 
-const USERNAME = process.env.GAB_USERNAME;
-const PASSWORD = process.env.GAB_PASSWORD
+const USERNAME = process.env.P5_USERNAME;
+const PASSWORD = process.env.P5_PASSWORD
 const USERNAME_SELECTOR = '#loginForm\\:username';
 const PASSWORD_SELECTOR = '#loginForm\\:password';
 const LOGIN_CTA_SELECTOR = '#loginForm\\:submit';
