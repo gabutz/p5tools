@@ -127,7 +127,7 @@ async function approve(page, type, limit, approved) {
     return document.querySelectorAll('table[id$=list] > tbody > tr').length;
   });
   
-  if (requests == 0 || approved >= limit) {
+  if (requests == 0 || approved >= limit && limit > 0) {
     return approved;
   }
 
